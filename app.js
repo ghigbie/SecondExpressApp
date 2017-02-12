@@ -6,7 +6,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/speak/:animal/", function(req, res){
-    var animal = animal.toLowercase();
+    var animal = animal.toLowerCase();
     var animalSay = "grrr.";
     switch(animal){
         case "pig":
