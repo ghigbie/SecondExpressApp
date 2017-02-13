@@ -5,8 +5,8 @@ app.get("/", function(req, res){
     res.send("<h1>You are end the slashing zone!</h1>");
 });
 
-app.get("/speak/:animal/", function(req, res){
-    var animal = animal.toLowerCase();
+app.get("/speak/:animal", function(req, res){
+    // var animal = animal.toLowerCase();
     var animalSay = "grrr.";
     switch(animal){
         case "pig":
@@ -28,8 +28,8 @@ app.get("/speak/:animal/", function(req, res){
 });
 
 app.get("/repeat/:somePhrase/:numberOfTimes", function(req, res){
-    var number = parseInt(numberOfTimes);
-    for(i = 0; i; < number; i++){
+    var somePhrase = somePhrase;
+    for(var i = 0; i <  numberOfTimes; i++){
         res.send("<h1>" + somePhrase + " </h1>");
     }
 })
