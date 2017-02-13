@@ -28,7 +28,8 @@ app.get("/speak/:animal/", function(req, res){
 });
 
 app.get("/repeat/:somePhrase/:numberOfTimes", function(req, res){
-    for(i = 0; i < numberOfTimes; i++){
+    var number = parseInt(numberOfTimes);
+    for(i = 0; i; < number; i++){
         res.send("<h1>" + somePhrase + " </h1>");
     }
 })
