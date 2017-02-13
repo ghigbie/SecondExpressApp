@@ -22,11 +22,12 @@ app.get("/speak/:animal", function(req, res){
 
 app.get("/repeat/:somePhrase/:numberOfTimes", function(req, res){
     var somePhrase = req.params.somePhrase;
-    var numberString = req.params.numberOfTimes;
-    var numberInt = parseInt(numberString, 10);
-    for(var i = 0; i <  numberInt; i++){
-        res.send("<h1>" + somePhrase + " </h1>");
+    var number = Number(req.params.numberOfTimes);
+    var message = "";
+    for(var i = 0; i <  number; i++){
+       message += "<h1>" + somePhrase + " </h1>";
     }
+    res.send(message);
 });
 
 app.get("*", function(req, res){
