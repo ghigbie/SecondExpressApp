@@ -29,8 +29,9 @@ app.get("/speak/:animal", function(req, res){
 
 app.get("/repeat/:somePhrase/:numberOfTimes", function(req, res){
     var somePhrase = req.params.somePhrase;
-    var number = parseInt(req.params.numberOfTimes);
-    for(var i = 0; i <  number; i++){
+    var numberString = req.params.numberOfTimes;
+    var numberInt = parseInt(numberString, 10);
+    for(var i = 0; i <  numberInt; i++){
         res.send("<h1>" + somePhrase + " </h1>");
     }
 });
