@@ -6,7 +6,7 @@ app.get("/", function(req, res){
 });
 
 app.get("/speak/:animal", function(req, res){
-    // var animal = animal.toLowerCase();
+    var animal = req.params.animal.toLowerCase();
     var animalSay = "grrr.";
     switch(animal){
         case "pig":
@@ -24,15 +24,16 @@ app.get("/speak/:animal", function(req, res){
         default:
             animalSay = "nothing at all...";
     }
-   res.send("<h1>The " + animal + " says" + animalSay + "</h1>"); 
+   res.send("<h1>The " + animal + " says " + animalSay + "</h1>"); 
 });
 
 app.get("/repeat/:somePhrase/:numberOfTimes", function(req, res){
-    var somePhrase = somePhrase;
-    for(var i = 0; i <  numberOfTimes; i++){
+    var somePhrase = req.params.somePhrase;
+    var number = parseInt(req.params.numberOfTimes);
+    for(var i = 0; i <  number; i++){
         res.send("<h1>" + somePhrase + " </h1>");
     }
-})
+});
 
 app.get("*", function(req, res){
     res.send("<h1>There are no animals to be found here! What are you doing with your life?</h1>");
