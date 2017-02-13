@@ -8,23 +8,16 @@ app.get("/", function(req, res){
 app.get("/speak/:animal", function(req, res){
     var animal = req.params.animal.toLowerCase();
     var animalSay = "grrr.";
-    switch(animal){
-        case "pig":
-            animalSay = "\"Oink!\"";
-            break;
-        case "cow":
-            animalSay = "\"Moo!\"";
-            break;
-        case "dog":
-            animalSay = "\"Woof!\"";
-            break;
-        case "cat":
-            animalSay = "\"Meow!\"";
-            break;
-        default:
-            animalSay = "nothing at all...";
+    var sounds = {
+        pig: "\"Oink!\"",
+        cow: "\"Moo!\"",
+        dog: "\"Woof!\"",
+        cat: "\"Meow!\"",
+        unicorn: "\"No, do that slowly\"",
+        goldfish: "..."
     }
-   res.send("<h1>The " + animal + " says " + animalSay + "</h1>"); 
+    var sound = sounds[animal];
+   res.send("<h1>The " + animal + " says " + sound + "</h1>"); 
 });
 
 app.get("/repeat/:somePhrase/:numberOfTimes", function(req, res){
