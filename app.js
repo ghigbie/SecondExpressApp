@@ -13,6 +13,7 @@ app.get("/speak/:animal", function(req, res){
         cow: "\"Moo!\"",
         dog: "\"Woof!\"",
         cat: "\"Meow!\"",
+        elk: "\"errrr\"",
         unicorn: "\"No, do that slowly\"",
         goldfish: "..."
     }
